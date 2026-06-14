@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roofing Services — Metal Roof, Repairs & Guttering Sydney</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #141414;
+            --gold: #C8A86B;
+            --light-gray: #F5F5F5;
+            --white: #FFFFFF;
+            --text: #333333;
+            --text-light: #666666;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        header {
+            background: var(--black);
+            color: var(--white);
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        .phone {
+            background: var(--gold);
+            color: var(--black);
+            padding: 10px 20px;
+            border-radius: 3px;
+            font-weight: 600;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        /* PAGE HERO */
+        .page-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), var(--black);
+            color: var(--white);
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .page-hero p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 80px 24px;
+        }
+
+        section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--black);
+        }
+
+        /* SERVICE DETAIL */
+        .service-detail {
+            background: var(--light-gray);
+            padding: 60px 24px;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--gold);
+        }
+
+        .service-detail h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--black);
+        }
+
+        .service-detail p {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .process-list {
+            list-style: none;
+            margin-top: 24px;
+        }
+
+        .process-list li {
+            padding: 12px 0;
+            padding-left: 28px;
+            position: relative;
+            font-size: 14px;
+            color: var(--text);
+            border-bottom: 1px solid rgba(200, 168, 107, 0.2);
+        }
+
+        .process-list li:last-child {
+            border-bottom: none;
+        }
+
+        .process-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .process-step {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .step {
+            background: var(--white);
+            padding: 24px;
+            border-radius: 4px;
+            border-top: 3px solid var(--gold);
+        }
+
+        .step h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--black);
+        }
+
+        .step p {
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* CTA */
+        .cta-button {
+            background: var(--gold);
+            color: var(--black);
+            padding: 16px 40px;
+            border: none;
+            border-radius: 3px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-top: 24px;
+        }
+
+        .cta-button:hover {
+            background: #b8985b;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 48px 24px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 28px;
+            }
+
+            section h2 {
+                font-size: 28px;
+            }
+
+            nav {
+                gap: 16px;
+                font-size: 11px;
+            }
+
+            .process-step {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">SAL Roofing</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#services">Services</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="tel:0432910369" class="phone">0432 910 369</a>
+        </nav>
+    </header>
+
+    <div class="page-hero">
+        <h1>Roofing Services Across Sydney</h1>
+        <p>Expert repair, installation, and maintenance for residential and commercial properties</p>
+    </div>
+
+    <section id="services">
+        <div class="container">
+            <!-- METAL ROOFING -->
+            <div class="service-detail" id="metal">
+                <h3>Metal Roofing</h3>
+                <p>Metal roofing has become one of Sydney's most popular choices for homeowners looking for a strong, durable, and stylish roofing solution. It offers excellent weather resistance, long-term reliability, and a clean modern appearance that suits a wide range of architectural styles. Metal roofs perform exceptionally well in Sydney's climate, handling heat, wind, and heavy rain with ease.</p>
+                <p>SAL Roofing specialises in metal roof installation, repair, and maintenance. We work with Colorbond, Zincalume, corrugated sheets, standing seam, and a range of metal profiles to deliver long-lasting results. Each installation is completed with precision and attention to detail to ensure your home receives the best possible protection.</p>
+
+                <h4 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px; color: var(--black);">Why Choose Metal Roofing</h4>
+                <ul class="process-list">
+                    <li>Excellent resistance to storms and extreme weather</li>
+                    <li>A long lifespan with minimal maintenance</li>
+                    <li>Strong protection against leaks and corrosion</li>
+                    <li>Modern, stylish appearance</li>
+                    <li>Compatible with solar panel installation</li>
+                    <li>Energy efficient and lightweight</li>
+                </ul>
+
+                <h4 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px; color: var(--black);">Our Metal Roofing Services</h4>
+                <div class="process-step">
+                    <div class="step">
+                        <h4>Installation</h4>
+                        <p>Professional installation for new homes, extensions, and full replacements with correct fastening, alignment, and weather sealing.</p>
+                    </div>
+                    <div class="step">
+                        <h4>Repairs</h4>
+                        <p>Quick resolution of loose sheets, corrosion, damaged flashing, or storm-related dents with focus on long-term performance.</p>
+                    </div>
+                    <div class="step">
+                        <h4>Replacements</h4>
+                        <p>Complete roof replacement for worn or rusted systems with improved strength, insulation, and appearance.</p>
+                    </div>
+                    <div class="step">
+                        <h4>Maintenance</h4>
+                        <p>Routine inspection, cleaning, flashing resealing, and anti-rust treatments to keep your metal roof protected.</p>
+                    </div>
+                    <div class="step">
+                        <h4>Protective Coatings</h4>
+                        <p>High-performance UV and moisture-resistant coatings designed for Australian environments.</p>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="cta-button">Get a Free Metal Roof Quote</a>
+            </div>
+
+            <!-- GUTTER MAINTENANCE -->
+            <div class="service-detail" id="gutter">
+                <h3>Gutter Maintenance & Repair</h3>
+                <p>Your guttering system plays a vital role in protecting your home from water damage. When gutters are blocked, sagging, or overflowing, rainwater begins travelling into places it should never reach. Poor gutter maintenance often leads to roof leaks, damaged fascia boards, stained walls, mould, and even structural issues around your foundations.</p>
+                <p>SAL Roofing provides thorough and reliable gutter maintenance services across Sydney. We clean, inspect, and service gutters and downpipes to ensure they can handle heavy rain and storm conditions. Our goal is to keep your drainage system working smoothly so your home remains safe, dry, and protected throughout every season.</p>
+
+                <h4 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px; color: var(--black);">Why Regular Gutter Maintenance Matters</h4>
+                <ul class="process-list">
+                    <li>Prevents roof leaks and internal water damage</li>
+                    <li>Protects walls, fascia boards, and roof edges</li>
+                    <li>Reduces mould and moisture buildup</li>
+                    <li>Ensures smooth water drainage during storms</li>
+                    <li>Extends the life of your guttering system</li>
+                    <li>Identifies problems before they become costly</li>
+                </ul>
+
+                <h4 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px; color: var(--black);">Our Gutter Maintenance Process</h4>
+                <div class="process-step">
+                    <div class="step">
+                        <h4>Inspection</h4>
+                        <p>Complete inspection of gutters, downpipes, brackets, joints, and alignment to identify blockages, rust, and damage.</p>
+                    </div>
+                    <div class="step">
+                        <h4>Debris Removal</h4>
+                        <p>Safe removal of leaves, branches, dirt, and roof sediment to restore clean, efficient drainage.</p>
+                    </div>
+                    <div class="step">
+                        <h4>Downpipe Flushing</h4>
+                        <p>Internal flushing to remove hidden blockages and ensure water travels freely from roof to ground.</p>
+                    </div>
+                    <div class="step">
+                        <h4>Bracket & Alignment Check</h4>
+                        <p>Tightening loose brackets and adjusting alignment to prevent pooling and early deterioration.</p>
+                    </div>
+                    <div class="step">
+                        <h4>Minor Repairs</h4>
+                        <p>Sealing small leaks, worn joints, and reinforcing weak points to keep gutters watertight.</p>
+                    </div>
+                    <div class="step">
+                        <h4>Final Testing</h4>
+                        <p>Water testing to confirm proper flow, followed by site cleanup and final inspection.</p>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="cta-button">Schedule Gutter Maintenance</a>
+            </div>
+
+            <!-- ROOF INSTALLATION -->
+            <div class="service-detail" id="installation">
+                <h3>Roof Installation</h3>
+                <p>A new roof is one of the most important investments you can make for your home. It determines how well your property withstands storms, heat, rain, and long-term wear. A correctly installed roof provides strong protection, improves energy efficiency, enhances street appeal, and adds long-term value to your property.</p>
+                <p>SAL Roofing provides professional roof installation services for new homes, renovations, extensions, and roof replacements. We work with all major roofing materials and custom designs to deliver strong, long-lasting results tailored to your property. From planning to completion, we focus on quality workmanship, structural precision, and clear communication throughout the entire process.</p>
+
+                <h4 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px; color: var(--black);">Why Professional Installation Matters</h4>
+                <ul class="process-list">
+                    <li>Ensures correct alignment and waterproofing</li>
+                    <li>Improves drainage and prevents future leaks</li>
+                    <li>Enhances insulation and energy efficiency</li>
+                    <li>Strengthens structural stability</li>
+                    <li>Reduces long-term repair and maintenance costs</li>
+                    <li>Meets Australian building standards and regulations</li>
+                </ul>
+
+                <h4 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px; color: var(--black);">Our Installation Process</h4>
+                <div class="process-step">
+                    <div class="step">
+                        <h4>Site Assessment</h4>
+                        <p>Full assessment of roof design, structure, pitch, and drainage requirements tailored to your home.</p>
+                    </div>
+                    <div class="step">
+                        <h4>Material Selection</h4>
+                        <p>Help selecting the right roofing material that suits your style, budget, and long-term goals.</p>
+                    </div>
+                    <div class="step">
+                        <h4>Structure Preparation</h4>
+                        <p>Preparation of roof frame, trusses, battens, and sarking to ensure proper support.</p>
+                    </div>
+                    <div class="step">
+                        <h4>Material Installation</h4>
+                        <p>Careful, systematic installation with proper alignment, fastening, and weather sealing.</p>
+                    </div>
+                    <div class="step">
+                        <h4>Waterproofing & Flashing</h4>
+                        <p>Professional flashing and sealing around chimneys, skylights, and edges for leak prevention.</p>
+                    </div>
+                    <div class="step">
+                        <h4>Quality Inspection</h4>
+                        <p>Final inspection confirming structural stability, fastening integrity, and Australian building standards compliance.</p>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="cta-button">Get a Free Installation Quote</a>
+            </div>
+
+            <!-- ROOF REPAIRS -->
+            <div class="service-detail" id="repairs">
+                <h3>Roof Repairs</h3>
+                <p>From leak detection to storm damage repairs, we fix both minor and major issues with precision and urgency. Whether it's a small patch or a major section replacement, we approach every repair with the same level of professionalism and care.</p>
+
+                <h4 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px; color: var(--black);">Common Roof Problems We Fix</h4>
+                <ul class="process-list">
+                    <li>Roof leaks and water ingress</li>
+                    <li>Cracked, broken, or missing tiles</li>
+                    <li>Storm damage and impact damage</li>
+                    <li>Sagging roof sections</li>
+                    <li>Flashing failures</li>
+                    <li>Rust and corrosion on metal roofs</li>
+                    <li>Moss and algae growth</li>
+                </ul>
+
+                <a href="contact.html" class="cta-button">Emergency Repair Service</a>
+            </div>
+
+            <!-- RESTORATIONS -->
+            <div class="service-detail" id="restoration">
+                <h3>Roof Restorations</h3>
+                <p>Restore worn or faded roofs with professional cleaning, tile repairs, and UV-resistant coatings. Restoration is a cost-effective alternative to full replacement that extends your roof's lifespan by 10+ years.</p>
+
+                <h4 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px; color: var(--black);">What's Included in Our Restoration Service</h4>
+                <ul class="process-list">
+                    <li>High-pressure cleaning and moss removal</li>
+                    <li>Tile repair and replacement</li>
+                    <li>Flashing inspection and resealing</li>
+                    <li>UV-resistant protective coating application</li>
+                    <li>Gutter cleaning and repair</li>
+                    <li>Full inspection report with photos</li>
+                </ul>
+
+                <a href="contact.html" class="cta-button">Request a Restoration Quote</a>
+            </div>
+
+            <!-- INSPECTIONS -->
+            <div class="service-detail" id="inspection">
+                <h3>Roof Inspections</h3>
+                <p>Detailed roof inspections with high-resolution imagery and written reports. Identify hidden problems before they develop into costly repairs. Perfect for pre-purchase inspections, insurance claims, or routine maintenance.</p>
+
+                <h4 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px; color: var(--black);">What We Inspect</h4>
+                <ul class="process-list">
+                    <li>Roof structure and framing</li>
+                    <li>Tiles, sheets, and coverings</li>
+                    <li>Flashing and sealing integrity</li>
+                    <li>Gutter and drainage condition</li>
+                    <li>Ventilation and insulation</li>
+                    <li>Evidence of leaks or water damage</li>
+                    <li>Safety hazards and structural issues</li>
+                </ul>
+
+                <a href="contact.html" class="cta-button">Book a Roof Inspection</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>SAL ROOFING</strong></p>
+        <p>Unit 3, 22 Searl Rd, Cronulla NSW 2230</p>
+        <p><a href="tel:0432910369">0432 910 369</a> | <a href="mailto:Sam@salroofing.com.au">Sam@salroofing.com.au</a></p>
+        <p style="margin-top: 20px; font-size: 11px;">© 2026 SAL Roofing. All rights reserved.</p>
+    </footer>
+</body>
+</html>

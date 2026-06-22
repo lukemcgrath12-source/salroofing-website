@@ -1738,12 +1738,29 @@
         </p>
     </div>
 
-    <!-- HERO VIDEO -->
-    <section class="hero">
-        <video autoplay muted loop playsinline style="width: 100%; height: 600px; object-fit: cover; display: block;">
+    <!-- HERO SECTION -->
+    <section class="hero" style="height: 85vh; min-height: 560px;">
+        <!-- Background video -->
+        <video
+            autoplay
+            loop
+            muted
+            playsinline
+            preload="metadata"
+            aria-hidden="true"
+            style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;"
+        >
             <source src="sal-roofing-hero-video-1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
         </video>
+
+        <!-- Dark overlay -->
+        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.55); z-index: 1;"></div>
+
+        <!-- Hero content -->
+        <div style="position: relative; z-index: 2; text-align: center; color: white; padding: 60px 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+            <h1 style="font-size: 64px; font-weight: 700; margin-bottom: 20px; line-height: 1.2;">SAL Roofing</h1>
+            <p style="font-size: 20px; font-weight: 300; color: rgba(255,255,255,0.85); margin: 0;">Metal roofing, repairs & emergency services across Sydney</p>
+        </div>
     </section>
 
     <!-- INTRO SECTION -->
@@ -1787,7 +1804,7 @@
         <div class="services-cards-grid">
             <div class="fade-in-up stagger-1">
                 <div class="service-card-image-wrapper">
-                    <img src="https://via.placeholder.com/500x400?text=Colorbond+Installation" alt="Colorbond metal roofing installation">
+                    <img src="sal-roofing-service-colorbond.jpg" alt="Colorbond metal roofing installation">
                 </div>
                 <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 8px 0; color: var(--black);">Colorbond Metal</h3>
                 <p style="font-size: 15px; font-weight: 300; line-height: 1.6; color: var(--text-light); margin: 0;">BlueScope-backed installation rated for coastal Sydney. 40+ year lifespan.</p>
@@ -1795,7 +1812,7 @@
 
             <div class="fade-in-up stagger-2">
                 <div class="service-card-image-wrapper">
-                    <img src="https://via.placeholder.com/500x400?text=Leak+Repairs" alt="Professional leak repair">
+                    <img src="sal-roofing-service-repair.jpg" alt="Professional leak repair">
                 </div>
                 <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 8px 0; color: var(--black);">Leak Repairs</h3>
                 <p style="font-size: 15px; font-weight: 300; line-height: 1.6; color: var(--text-light); margin: 0;">Fast. Traced. Fixed. We find the source, not just patch it. 5-year warranty.</p>
@@ -1803,7 +1820,7 @@
 
             <div class="fade-in-up stagger-3">
                 <div class="service-card-image-wrapper">
-                    <img src="https://via.placeholder.com/500x400?text=24-7+Emergency" alt="24/7 emergency roofing">
+                    <img src="sal-roofing-service-emergency.jpg" alt="24/7 emergency roofing">
                 </div>
                 <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 8px 0; color: var(--black);">24/7 Emergency</h3>
                 <p style="font-size: 15px; font-weight: 300; line-height: 1.6; color: var(--text-light); margin: 0;">Roof gone mid-storm? Same-day inspection, temporary fix, permanent solution.</p>
@@ -1844,13 +1861,13 @@
         </div>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="sal-roofing-gallery-1.jpg" alt="Completed metal roofing installation">
+                <img src="sal-roofing-gallery-1.png" alt="Completed metal roofing installation">
             </div>
             <div class="gallery-item">
                 <img src="sal-roofing-gallery-2.png" alt="Residential roof replacement project">
             </div>
             <div class="gallery-item">
-                <img src="sal-roofing-gallery-3.jpg" alt="Colorbond roof installation">
+                <img src="sal-roofing-gallery-3.png" alt="Colorbond roof installation">
             </div>
         </div>
     </section>
@@ -1876,11 +1893,11 @@
                     </div>
                     <div class="team-member fade-in-right stagger-2">
                         <div class="team-member-image">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop" alt="Professional Team">
+                            <img src="sal-roofing-team-member-2.jpg" alt="Team member">
                         </div>
-                        <div class="team-role">Crew Lead</div>
-                        <h4>Professional Team</h4>
-                        <p>Same crew for 10+ years. Trained, experienced, and personally accountable. Each team member knows the standard: work right the first time, leave the site clean.</p>
+                        <div class="team-role">Lead Roofer</div>
+                        <h4>[Team Member Name]</h4>
+                        <p>[Add team member bio and experience here]</p>
                     </div>
                 </div>
             </div>

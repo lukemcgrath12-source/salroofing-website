@@ -513,6 +513,127 @@
             100% { opacity: 0; }
         }
 
+        /* HERO CTAs */
+        .hero-cta-row {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 38px;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 34px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: pointer;
+            border: 1.5px solid transparent;
+        }
+        .hero-btn-primary {
+            background: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+        }
+        .hero-btn-primary:hover {
+            background: transparent;
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+        .hero-btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
+        }
+        .hero-btn-secondary:hover {
+            background: var(--white);
+            color: var(--black);
+            border-color: var(--white);
+            transform: translateY(-3px);
+        }
+        .hero-btn svg { width: 17px; height: 17px; }
+
+        /* HERO bottom fade into page */
+        .hero-fade {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(to bottom, transparent, rgba(20, 20, 20, 0.55));
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        /* TRUST BAR */
+        .trust-bar {
+            background: var(--black);
+            border-bottom: 1px solid rgba(200, 168, 107, 0.15);
+            padding: 24px 40px;
+        }
+        .trust-bar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px 36px;
+        }
+        .trust-item-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .trust-item-bar svg { width: 18px; height: 18px; color: var(--gold); flex-shrink: 0; }
+        .trust-divider { width: 1px; height: 16px; background: rgba(255, 255, 255, 0.15); }
+
+        /* GALLERY HOVER OVERLAY */
+        .gallery-item .gallery-caption {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 24px 22px 20px;
+            background: linear-gradient(to top, rgba(20, 20, 20, 0.92), transparent);
+            color: var(--white);
+            transform: translateY(12px);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: 2;
+            pointer-events: none;
+        }
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .gallery-caption .g-tag {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+        .gallery-caption .g-title {
+            font-size: 17px;
+            font-weight: 600;
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -611,6 +732,27 @@
             box-shadow: 0 20px 40px rgba(20, 20, 20, 0.1);
         }
 
+        /* IMAGE PLACEHOLDERS (awaiting real photos) */
+        .img-ph {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1f1f1f, #111);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            color: rgba(200, 168, 107, 0.75);
+        }
+        .img-ph svg { width: 40px; height: 40px; opacity: 0.65; }
+        .img-ph span { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; text-align: center; padding: 0 12px; }
+        .intro-ph {
+            aspect-ratio: 6 / 5;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(20, 20, 20, 0.1);
+            overflow: hidden;
+        }
+
         .intro-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -644,7 +786,7 @@
         /* SERVICES SECTION */
         .services-section {
             padding: 100px 100px 80px 100px;
-            background: var(--white);
+            background: var(--cream);
         }
 
         .services-header h2 {
@@ -723,7 +865,7 @@
         }
 
         .services-follow-box {
-            background: var(--cream);
+            background: var(--white);
             padding: 60px;
             border-radius: 16px;
         }
@@ -1871,6 +2013,13 @@
                 padding: 60px 24px;
             }
 
+            .hero-cta-row { gap: 12px; }
+            .hero-btn { padding: 14px 24px; font-size: 12px; }
+            .trust-bar { padding: 18px 20px; }
+            .trust-bar-inner { gap: 12px 20px; }
+            .trust-divider { display: none; }
+            .trust-item-bar { font-size: 11px; }
+
             .faq-contact-wrapper {
                 padding: 60px 24px;
             }
@@ -2060,13 +2209,6 @@
         </a>
     </div>
 
-    <!-- HERO BADGE -->
-    <div style="text-align: center; padding: 32px 20px; background: var(--cream); border-bottom: 1px solid rgba(20, 20, 20, 0.08);">
-        <p style="font-size: 13px; font-weight: 500; letter-spacing: 0.5px; color: var(--black); margin: 0; line-height: 1.6;">
-            All of Sydney • <span style="color: var(--gold); font-weight: 600;">Metal roofing, repairs & new build</span> • 10+ years, 100+ projects
-        </p>
-    </div>
-
     <!-- HERO VIDEO -->
     <section class="hero">
         <div class="hero-video-container">
@@ -2080,12 +2222,35 @@
             <div class="hero-kicker">Sydney Metal Roofing</div>
             <h1>SAL Roofing</h1>
             <p>Metal roofing, repairs & emergency services across Sydney</p>
+            <div class="hero-cta-row">
+                <a href="javascript:void(0)" onclick="openQuoteModal()" class="hero-btn hero-btn-primary">Get a Free Quote</a>
+                <a href="tel:0432910369" class="hero-btn hero-btn-secondary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    0432 910 369
+                </a>
+            </div>
         </div>
+        <div class="hero-fade"></div>
         <div class="scroll-cue">
             <div class="mouse"></div>
             <span>Scroll</span>
         </div>
     </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+        <div class="trust-bar-inner">
+            <div class="trust-item-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"></path><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M12 2a10 10 0 0 0-7 17l7 3 7-3a10 10 0 0 0-7-17z"></path></svg>Licensed &amp; Insured</div>
+            <div class="trust-divider"></div>
+            <div class="trust-item-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21.4 8 14 2 9.4h7.6z"></path></svg>BlueScope Colorbond</div>
+            <div class="trust-divider"></div>
+            <div class="trust-item-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>5-Year Guarantee</div>
+            <div class="trust-divider"></div>
+            <div class="trust-item-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>24/7 Emergency</div>
+            <div class="trust-divider"></div>
+            <div class="trust-item-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path><circle cx="12" cy="12" r="4"></circle></svg>10+ Years Experience</div>
+        </div>
+    </div>
 
     <!-- INTRO SECTION -->
     <section class="intro-section" id="intro">
@@ -2097,17 +2262,17 @@
                 <p>We also do carpentry work if a job needs it. Bigger scope or just the roofing — either way, we'll look after it properly and make sure you're happy before we invoice.</p>
             </div>
             <div class="intro-right">
-                <img src="https://via.placeholder.com/600x500?text=SAL+Roofing+Project" alt="SAL Roofing premium project" class="intro-image">
+                <div class="intro-ph"><div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Feature project photo</span></div></div>
             </div>
         </div>
 
         <div class="intro-stats">
             <div class="stat-box">
-                <div class="stat-number">10+</div>
+                <div class="stat-number count" data-target="10" data-suffix="+">0</div>
                 <div class="stat-label">Years of experience building trust.</div>
             </div>
             <div class="stat-box">
-                <div class="stat-number">100+</div>
+                <div class="stat-number count" data-target="100" data-suffix="+">0</div>
                 <div class="stat-label">Projects completed across Sydney.</div>
             </div>
             <div class="stat-box">
@@ -2128,7 +2293,7 @@
         <div class="services-cards-grid">
             <div class="fade-in-up stagger-1">
                 <div class="service-card-image-wrapper">
-                    <img src="https://via.placeholder.com/500x400?text=Colorbond+Installation" alt="Colorbond metal roofing installation">
+                    <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Colorbond install</span></div>
                 </div>
                 <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 8px 0; color: var(--black);">Colorbond Metal</h3>
                 <p style="font-size: 15px; font-weight: 300; line-height: 1.6; color: var(--text-light); margin: 0;">BlueScope-backed installation rated for coastal Sydney. 40+ year lifespan.</p>
@@ -2136,7 +2301,7 @@
 
             <div class="fade-in-up stagger-2">
                 <div class="service-card-image-wrapper">
-                    <img src="https://via.placeholder.com/500x400?text=Leak+Repairs" alt="Professional leak repair">
+                    <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Leak repair</span></div>
                 </div>
                 <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 8px 0; color: var(--black);">Leak Repairs</h3>
                 <p style="font-size: 15px; font-weight: 300; line-height: 1.6; color: var(--text-light); margin: 0;">Fast. Traced. Fixed. We find the source, not just patch it. 5-year warranty.</p>
@@ -2144,7 +2309,7 @@
 
             <div class="fade-in-up stagger-3">
                 <div class="service-card-image-wrapper">
-                    <img src="https://via.placeholder.com/500x400?text=24-7+Emergency" alt="24/7 emergency roofing">
+                    <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Emergency callout</span></div>
                 </div>
                 <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 8px 0; color: var(--black);">24/7 Emergency</h3>
                 <p style="font-size: 15px; font-weight: 300; line-height: 1.6; color: var(--text-light); margin: 0;">Roof gone mid-storm? Same-day inspection, temporary fix, permanent solution.</p>
@@ -2191,13 +2356,16 @@
         </div>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="sal-roofing-gallery-1.jpg" alt="Completed metal roofing installation">
+                <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Project photo</span></div>
+                <div class="gallery-caption"><div class="g-tag">Colorbond Re-Roof</div><div class="g-title">Eastern Suburbs</div></div>
             </div>
             <div class="gallery-item">
                 <img src="sal-roofing-gallery-2.png" alt="Residential roof replacement project">
+                <div class="gallery-caption"><div class="g-tag">Roof Replacement</div><div class="g-title">Sutherland Shire</div></div>
             </div>
             <div class="gallery-item">
-                <img src="sal-roofing-gallery-3.jpg" alt="Colorbond roof installation">
+                <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Project photo</span></div>
+                <div class="gallery-caption"><div class="g-tag">Metal Roofing</div><div class="g-title">Cronulla</div></div>
             </div>
         </div>
     </section>
@@ -2215,7 +2383,7 @@
                 <div class="team-grid">
                     <div class="team-member fade-in-left stagger-1">
                         <div class="team-member-image">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Sam Longmuir, Owner & Operator">
+                            <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
                         </div>
                         <div class="team-role">Owner & Operator</div>
                         <h4>Sam Longmuir</h4>
@@ -2223,7 +2391,7 @@
                     </div>
                     <div class="team-member fade-in-right stagger-2">
                         <div class="team-member-image">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop" alt="Professional Team">
+                            <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
                         </div>
                         <div class="team-role">Crew Lead</div>
                         <h4>Professional Team</h4>
@@ -2235,7 +2403,7 @@
 
         <div class="trust-grid">
             <div class="trust-item">
-                <div class="trust-number">10+</div>
+                <div class="trust-number count" data-target="10" data-suffix="+">0</div>
                 <h3>Years, same crew</h3>
                 <p>Not a franchisee, not a franchiser. One team. Same people finish what they start. Sam knows your area, your weather, your material specs.</p>
             </div>
@@ -2618,6 +2786,30 @@
         document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in').forEach((el) => {
             observer.observe(el);
         });
+
+        // STAT COUNT-UP
+        function animateCount(el) {
+            const target = parseInt(el.getAttribute('data-target'), 10);
+            const suffix = el.getAttribute('data-suffix') || '';
+            const duration = 1400;
+            const start = performance.now();
+            function tick(now) {
+                const p = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.round(eased * target) + suffix;
+                if (p < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }
+        const countObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    animateCount(entry.target);
+                    countObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.6 });
+        document.querySelectorAll('.count').forEach((el) => countObserver.observe(el));
 
         // Header scroll detection
         const header = document.querySelector('header');

@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAL Roofing — Metal Roofing & Repair Sydney</title>
-    <meta name="description" content="Professional metal roofing & repairs across Sydney. Expert Colorbond installation, emergency repairs, guttering. Free quotes. 10+ years experience. Call 0432 910 369.">
+    <meta name="description" content="Professional metal roofing & repairs across Sydney. Expert Colorbond installation, emergency repairs, guttering. Free quotes. Licensed & insured. Call 0432 910 369.">
     <link rel="canonical" href="https://salroofing.com.au/">
 
     <!-- Open Graph / Social Share -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SAL Roofing">
     <meta property="og:title" content="SAL Roofing — Metal Roofing & Repairs, Sydney">
-    <meta property="og:description" content="Metal roofing, Colorbond, repairs & 24/7 emergency service across Sydney. 10+ years, 100+ projects, zero comebacks. Free quotes — call 0432 910 369.">
+    <meta property="og:description" content="Metal roofing, Colorbond, repairs & 24/7 emergency service across Sydney. Licensed & insured. Free quotes — call 0432 910 369.">
     <meta property="og:url" content="https://salroofing.com.au/">
     <meta property="og:image" content="https://raw.githubusercontent.com/lukemcgrath12-source/salroofing-website/main/sal-roofing-image-break-1.png">
     <meta property="og:image:width" content="1200">
@@ -90,7 +90,7 @@
           "name": "What makes SAL Roofing different from other contractors?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "You're not hiring a franchised roofing empire. You're working directly with Sam — the owner and operator. We've built our reputation on 10+ years of consistent, personal service. Same crew, no call centre, no hidden contractors. 100+ projects, zero post-warranty comebacks."
+            "text": "You're not hiring a franchised roofing empire. You're working directly with Sam — the owner and operator. Same crew, no call centre, no hidden contractors. We show up, we finish the job properly, and we stand behind the work."
           }
         },
         {
@@ -98,7 +98,7 @@
           "name": "How does pricing work and what can I expect to pay?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We provide transparent, fixed quotes with no hidden costs. Colorbond metal roofing typically runs $80–150/m² installed. All repairs come with a 5-year workmanship guarantee. Get a free inspection and written quote — no obligation."
+            "text": "We provide transparent, fixed quotes with no hidden costs. Colorbond metal roofing typically runs $80–150/m² installed. Get a free inspection and written quote — no obligation."
           }
         },
         {
@@ -111,10 +111,10 @@
         },
         {
           "@type": "Question",
-          "name": "What warranty do you offer and what does it cover?",
+          "name": "Do you stand behind your work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Every installation and repair comes with a 5-year workmanship guarantee. Colorbond roofing lasts 40–70 years with proper care. We handle all BlueScope warranty registration and provide full documentation."
+            "text": "Absolutely. If something goes wrong because of our workmanship, we come back and put it right. Colorbond roofing lasts 40–70 years with proper care, and we provide full documentation on materials and any manufacturer warranties."
           }
         },
         {
@@ -776,6 +776,22 @@
             letter-spacing: -1px;
         }
 
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 18px auto;
+            color: var(--gold);
+        }
+        .stat-icon svg { width: 100%; height: 100%; }
+
+        .stat-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 10px;
+            letter-spacing: -0.3px;
+        }
+
         .stat-label {
             font-size: 15px;
             font-weight: 300;
@@ -800,25 +816,92 @@
 
         .services-cards-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            max-width: 1400px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+            max-width: 1500px;
             margin: 0 auto 80px;
+        }
+
+        .service-card {
+            position: relative;
+            background: var(--white);
+            border: 1px solid rgba(20,20,20,0.08);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.45s cubic-bezier(0.23,1,0.32,1), box-shadow 0.45s cubic-bezier(0.23,1,0.32,1), border-color 0.45s ease;
+            box-shadow: 0 4px 20px rgba(20,20,20,0.04);
+            display: flex;
+            flex-direction: column;
+        }
+        .services-cards-grid .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 24px 50px rgba(20,20,20,0.16);
+            border-color: rgba(200,168,107,0.5);
         }
 
         .service-card-image-wrapper {
             position: relative;
-            border-radius: 16px;
             overflow: hidden;
-            margin-bottom: 24px;
-            aspect-ratio: 5 / 4;
+            aspect-ratio: 4 / 3;
+            margin: 0;
         }
-
         .service-card-image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.23,1,0.32,1);
         }
+        .service-card:hover .service-card-image-wrapper img { transform: scale(1.06); }
+
+        .service-card-number {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            z-index: 2;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(20,20,20,0.85);
+            color: var(--gold);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .service-card-body {
+            padding: 32px 30px 36px 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-card-body h3 {
+            font-size: 25px;
+            font-weight: 700;
+            margin: 0 0 14px 0;
+            color: var(--black);
+            letter-spacing: -0.6px;
+            line-height: 1.2;
+        }
+        .service-card-body p {
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--text-light);
+            margin: 0;
+        }
+        .service-card-accent {
+            width: 40px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 2px;
+            margin-bottom: 22px;
+            transition: width 0.45s cubic-bezier(0.23,1,0.32,1);
+        }
+        .service-card:hover .service-card-accent { width: 72px; }
 
         .services-bottom {
             display: grid;
@@ -1979,7 +2062,7 @@
             }
 
             .services-cards-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .services-bottom {
@@ -2252,13 +2335,9 @@
         <div class="trust-bar-inner">
             <div class="trust-item-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"></path><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M12 2a10 10 0 0 0-7 17l7 3 7-3a10 10 0 0 0-7-17z"></path></svg>Licensed &amp; Insured</div>
             <div class="trust-divider"></div>
-            <div class="trust-item-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21.4 8 14 2 9.4h7.6z"></path></svg>BlueScope Colorbond</div>
-            <div class="trust-divider"></div>
-            <div class="trust-item-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>5-Year Guarantee</div>
+            <div class="trust-item-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21.4 8 14 2 9.4h7.6z"></path></svg>Colorbond Specialists</div>
             <div class="trust-divider"></div>
             <div class="trust-item-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>24/7 Emergency</div>
-            <div class="trust-divider"></div>
-            <div class="trust-item-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path><circle cx="12" cy="12" r="4"></circle></svg>10+ Years Experience</div>
         </div>
     </div>
 
@@ -2267,9 +2346,9 @@
         <div class="intro-container">
             <div class="intro-left">
                 <div style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px;">THE VISION</div>
-                <h2>More than<br><em>just roofing.</em></h2>
-                <p>I'm Sam. Almost 10 years in the trade — metal roofing, repairs, new builds, renovation work across all of Sydney. What I love most is the people side. You tell me what you need, I listen, and we get it done right. No upselling, no pressure, just good work and friendly service.</p>
-                <p>We also do carpentry work if a job needs it. Bigger scope or just the roofing — either way, we'll look after it properly and make sure you're happy before we invoice.</p>
+                <h2>Built for<br><em>Sydney homes.</em></h2>
+                <p>Sydney features a mix of renovated homes, established residential properties, and architect-designed builds. Each requires a tailored approach to roofing, particularly when accounting for coastal conditions such as salt exposure, strong winds, and changing weather. Our team has extensive experience working across Sydney and along the South Coast, with a strong understanding of how to protect residential roofs for long-term performance.</p>
+                <p>Our approach remains simple: high-quality residential roofing, clearly explained, professionally delivered, and priced honestly.</p>
             </div>
             <div class="intro-right">
                 <div class="intro-ph"><div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Feature project photo</span></div></div>
@@ -2278,16 +2357,25 @@
 
         <div class="intro-stats">
             <div class="stat-box">
-                <div class="stat-number count" data-target="10" data-suffix="+">0</div>
-                <div class="stat-label">Years of experience building trust.</div>
+                <div class="stat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+                </div>
+                <div class="stat-title">Fully Licensed &amp; Insured</div>
+                <div class="stat-label">Qualified, compliant, and covered on every job.</div>
             </div>
             <div class="stat-box">
-                <div class="stat-number count" data-target="100" data-suffix="+">0</div>
-                <div class="stat-label">Projects completed across Sydney.</div>
+                <div class="stat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg>
+                </div>
+                <div class="stat-title">Clear, Itemised Quotes</div>
+                <div class="stat-label">Line-by-line pricing. No surprise deposits or hidden fees.</div>
             </div>
             <div class="stat-box">
-                <div class="stat-number">0</div>
-                <div class="stat-label">Comebacks. Zero compromises.</div>
+                <div class="stat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7l9-4 9 4M3 7v10l9 4 9-4V7M3 7l9 4 9-4M12 11v10"/></svg>
+                </div>
+                <div class="stat-title">Coastal-Grade Materials</div>
+                <div class="stat-label">Built for salt exposure and high-wind marine environments.</div>
             </div>
         </div>
     </section>
@@ -2296,33 +2384,57 @@
     <section id="services" class="services-section">
         <div style="margin-bottom: 80px;">
             <div style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px;">OUR WORK</div>
-            <h2 style="font-size: 64px; font-weight: 700; line-height: 1.15; margin-bottom: 20px; letter-spacing: -1px; color: var(--black);">Watch it <em style="font-style: italic; color: var(--gold);">come to life.</em></h2>
+            <h2 style="font-size: 64px; font-weight: 700; line-height: 1.15; margin-bottom: 20px; letter-spacing: -1px; color: var(--black);">What we <em style="font-style: italic; color: var(--gold);">do.</em></h2>
             <p style="font-size: 16px; font-weight: 300; line-height: 1.8; color: var(--text-light); max-width: 600px;">See our roofing projects take shape — from initial inspection through completion. Here's what we handle.</p>
         </div>
 
         <div class="services-cards-grid">
-            <div class="fade-in-up stagger-1">
+            <div class="service-card fade-in-up stagger-1">
                 <div class="service-card-image-wrapper">
-                    <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Colorbond install</span></div>
+                    <div class="service-card-number">01</div>
+                    <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Repairs &amp; restorations</span></div>
                 </div>
-                <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 8px 0; color: var(--black);">Colorbond Metal</h3>
-                <p style="font-size: 15px; font-weight: 300; line-height: 1.6; color: var(--text-light); margin: 0;">BlueScope-backed installation rated for coastal Sydney. 40+ year lifespan.</p>
+                <div class="service-card-body">
+                    <h3>Repairs &amp; Restorations</h3>
+                    <div class="service-card-accent"></div>
+                    <p>Leaks traced and fixed at the source. Worn, tired roofs cleaned, sealed and brought back to life.</p>
+                </div>
             </div>
 
-            <div class="fade-in-up stagger-2">
+            <div class="service-card fade-in-up stagger-2">
                 <div class="service-card-image-wrapper">
-                    <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Leak repair</span></div>
+                    <div class="service-card-number">02</div>
+                    <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Inspections</span></div>
                 </div>
-                <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 8px 0; color: var(--black);">Leak Repairs</h3>
-                <p style="font-size: 15px; font-weight: 300; line-height: 1.6; color: var(--text-light); margin: 0;">Fast. Traced. Fixed. We find the source, not just patch it. 5-year warranty.</p>
+                <div class="service-card-body">
+                    <h3>Inspections &amp; Reports</h3>
+                    <div class="service-card-accent"></div>
+                    <p>Detailed roof inspections with clear written reports. Know exactly what's going on before you buy, sell or commit.</p>
+                </div>
             </div>
 
-            <div class="fade-in-up stagger-3">
+            <div class="service-card fade-in-up stagger-3">
                 <div class="service-card-image-wrapper">
-                    <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Emergency callout</span></div>
+                    <div class="service-card-number">03</div>
+                    <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Replacements &amp; reroofing</span></div>
                 </div>
-                <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 8px 0; color: var(--black);">24/7 Emergency</h3>
-                <p style="font-size: 15px; font-weight: 300; line-height: 1.6; color: var(--text-light); margin: 0;">Roof gone mid-storm? Same-day inspection, temporary fix, permanent solution.</p>
+                <div class="service-card-body">
+                    <h3>Replacements &amp; Reroofing</h3>
+                    <div class="service-card-accent"></div>
+                    <p>Full roof replacements and reroofs in Colorbond and metal. Old or failing roofs stripped and rebuilt to last.</p>
+                </div>
+            </div>
+
+            <div class="service-card fade-in-up stagger-4">
+                <div class="service-card-image-wrapper">
+                    <div class="service-card-number">04</div>
+                    <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Guttering &amp; roof plumbing</span></div>
+                </div>
+                <div class="service-card-body">
+                    <h3>Guttering &amp; Roof Plumbing</h3>
+                    <div class="service-card-accent"></div>
+                    <p>Gutters, downpipes, flashing and roof plumbing. Proper drainage built to handle heavy Sydney storms.</p>
+                </div>
             </div>
         </div>
 
@@ -2358,28 +2470,6 @@
         <img src="https://raw.githubusercontent.com/lukemcgrath12-source/salroofing-website/main/sal-roofing-image-break-1.png" alt="Aerial view of completed roofing project" class="visual-break-image">
     </section>
 
-    <!-- GALLERY -->
-    <section class="gallery-section" id="gallery">
-        <div style="margin-bottom: 80px;">
-            <div style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px;">OUR WORK</div>
-            <h2 style="font-size: 64px; font-weight: 700; line-height: 1.15; margin-bottom: 20px; letter-spacing: -1px; color: var(--black);">See it <em style="font-style: italic; color: var(--gold);">come to life.</em></h2>
-        </div>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Project photo</span></div>
-                <div class="gallery-caption"><div class="g-tag">Colorbond Re-Roof</div><div class="g-title">Eastern Suburbs</div></div>
-            </div>
-            <div class="gallery-item">
-                <img src="sal-roofing-gallery-2.png" alt="Residential roof replacement project">
-                <div class="gallery-caption"><div class="g-tag">Roof Replacement</div><div class="g-title">Sutherland Shire</div></div>
-            </div>
-            <div class="gallery-item">
-                <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Project photo</span></div>
-                <div class="gallery-caption"><div class="g-tag">Metal Roofing</div><div class="g-title">Cronulla</div></div>
-            </div>
-        </div>
-    </section>
-
     <!-- WHY SAL -->
     <section class="why-section" id="why">
         <div style="margin-bottom: 60px;">
@@ -2397,7 +2487,7 @@
                         </div>
                         <div class="team-role">Owner & Operator</div>
                         <h4>Sam Longmuir</h4>
-                        <p>10+ years in metal roofing. Licensed, insured, hands-on. You'll see Sam on your roof personally. No shortcuts, no subcontractors — just quality work backed by his name.</p>
+                        <p>Experienced metal roofer. Licensed, insured, hands-on. You'll see Sam on your roof personally. No shortcuts, no subcontractors — just quality work backed by his name.</p>
                     </div>
                     <div class="team-member fade-in-right stagger-2">
                         <div class="team-member-image">
@@ -2405,7 +2495,7 @@
                         </div>
                         <div class="team-role">Crew Lead</div>
                         <h4>Professional Team</h4>
-                        <p>Same crew for 10+ years. Trained, experienced, and personally accountable. Each team member knows the standard: work right the first time, leave the site clean.</p>
+                        <p>A trained, experienced crew that's personally accountable. Each team member knows the standard: work right the first time, leave the site clean.</p>
                     </div>
                 </div>
             </div>
@@ -2413,14 +2503,14 @@
 
         <div class="trust-grid">
             <div class="trust-item">
-                <div class="trust-number count" data-target="10" data-suffix="+">0</div>
-                <h3>Years, same crew</h3>
-                <p>Not a franchisee, not a franchiser. One team. Same people finish what they start. Sam knows your area, your weather, your material specs.</p>
+                <div class="trust-number">1</div>
+                <h3>Team, start to finish</h3>
+                <p>Not a franchisee, not a franchiser. One team that finishes what they start. Sam knows your area, your weather, your material specs.</p>
             </div>
             <div class="trust-item">
                 <div class="trust-number">0</div>
                 <h3>Comebacks</h3>
-                <p>100+ projects. Zero post-warranty callbacks. We work right. BlueScope Colorbond backed, 5-year workmanship guarantee, no excuses.</p>
+                <p>We work right the first time. Quality materials, careful workmanship, and a job that's not finished until you're happy with it.</p>
             </div>
             <div class="trust-item">
                 <div class="trust-number">24/7</div>
@@ -2512,7 +2602,7 @@
                         </div>
                         <div class="testimonial-card">
                             <div class="testimonial-stars"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-                            <blockquote>"5 years on and the warranty has been perfect. No issues, no problems. Sam stands behind his work. That's what you want in a tradie."</blockquote>
+                            <blockquote>"Sam stands behind his work and it shows. No issues, no chasing him up, no problems. That's exactly what you want in a tradie."</blockquote>
                             <div class="testimonial-author">Linda T., Coogee</div>
                         </div>
                         <!-- Duplicate for seamless loop -->
@@ -2523,7 +2613,7 @@
                         </div>
                         <div class="testimonial-card">
                             <div class="testimonial-stars"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-                            <blockquote>"5 years on and the warranty has been perfect. No issues, no problems. Sam stands behind his work. That's what you want in a tradie."</blockquote>
+                            <blockquote>"Sam stands behind his work and it shows. No issues, no chasing him up, no problems. That's exactly what you want in a tradie."</blockquote>
                             <div class="testimonial-author">Linda T., Coogee</div>
                         </div>
                     </div>
@@ -2554,14 +2644,14 @@
                             <span>What makes SAL Roofing different from other contractors?</span>
                             <span class="faq-toggle">+</span>
                         </button>
-                        <div class="faq-answer">You're not hiring a franchised roofing empire. You're working directly with Sam — the owner and operator. We've built our reputation on 10+ years of consistent, personal service. Same crew, no call centre, no hidden contractors. We show up, we finish the job properly, and we stand behind the work. 100+ projects, zero post-warranty comebacks.</div>
+                        <div class="faq-answer">You're not hiring a franchised roofing empire. You're working directly with Sam — the owner and operator. Same crew, no call centre, no hidden contractors. We show up, we finish the job properly, and we stand behind the work.</div>
                     </div>
                     <div class="faq-item fade-in-up stagger-2">
                         <button class="faq-question" onclick="toggleFaq(this)">
                             <span>How does pricing work and what can I expect to pay?</span>
                             <span class="faq-toggle">+</span>
                         </button>
-                        <div class="faq-answer">We provide transparent, fixed quotes with no hidden costs or upsells. Colorbond metal roofing typically runs $80–150/m² installed, depending on size, pitch, and complexity. All repairs come with a 5-year workmanship guarantee. Get a free inspection and written quote — no obligation. <a href="tel:0432910369">Call 0432 910 369</a> to book yours.</div>
+                        <div class="faq-answer">We provide transparent, fixed quotes with no hidden costs or upsells. Colorbond metal roofing typically runs $80–150/m² installed, depending on size, pitch, and complexity. Get a free inspection and written quote — no obligation. <a href="tel:0432910369">Call 0432 910 369</a> to book yours.</div>
                     </div>
                     <div class="faq-item fade-in-up stagger-3">
                         <button class="faq-question" onclick="toggleFaq(this)">
@@ -2572,10 +2662,10 @@
                     </div>
                     <div class="faq-item fade-in-up stagger-4">
                         <button class="faq-question" onclick="toggleFaq(this)">
-                            <span>What warranty do you offer and what does it cover?</span>
+                            <span>Do you stand behind your work?</span>
                             <span class="faq-toggle">+</span>
                         </button>
-                        <div class="faq-answer">Every installation and repair comes with a 5-year workmanship guarantee. That means if something goes wrong due to our work, we fix it at no cost. Colorbond roofing itself lasts 40–70 years with proper care. We also handle all BlueScope warranty registration and provide full documentation so your protection is always clear.</div>
+                        <div class="faq-answer">Absolutely. If something goes wrong because of our workmanship, we come back and put it right. Colorbond roofing itself lasts 40–70 years with proper care, and we provide full documentation on materials and any manufacturer warranties so your protection is always clear.</div>
                     </div>
                     <div class="faq-item fade-in-up stagger-5">
                         <button class="faq-question" onclick="toggleFaq(this)">
@@ -2700,7 +2790,7 @@
         <div class="footer-main">
             <div class="footer-column footer-brand">
                 <h3><img src="https://raw.githubusercontent.com/lukemcgrath12-source/salroofing-website/main/sal-roofing-logo.png" alt="SAL Roofing" style="width: 150px; height: auto; display: block; margin-bottom: 4px;"></h3>
-                <p>Metal roofing and roof repairs across Sydney & South Coast NSW. 10+ years. 100+ projects. Zero comebacks.</p>
+                <p>Metal roofing and roof repairs across Sydney & South Coast NSW. Licensed, insured, and direct from Sam.</p>
                 <div class="footer-socials">
                     <a href="https://www.instagram.com/salroofing_" target="_blank" rel="noopener" title="Follow on Instagram" aria-label="Instagram">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>

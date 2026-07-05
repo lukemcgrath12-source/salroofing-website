@@ -1944,81 +1944,117 @@
 
         .modal-content {
             background: var(--white);
-            padding: 50px;
+            padding: 0;
             width: 100%;
-            max-width: 600px;
+            max-width: 580px;
             margin: 0 auto;
             position: relative;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            border-radius: 16px;
-            animation: modalIn 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            box-shadow: 0 40px 90px rgba(0, 0, 0, 0.35);
+            border-radius: 22px;
+            overflow: hidden;
+            animation: modalIn 0.45s cubic-bezier(0.23, 1, 0.320, 1);
         }
 
+        .modal-header {
+            background: linear-gradient(150deg, #1c1c1c 0%, #0c0c0c 100%);
+            padding: 40px 50px 34px 50px;
+            position: relative;
+        }
+        .modal-header::after {
+            content: '';
+            position: absolute;
+            left: 50px; bottom: 0;
+            width: 54px; height: 3px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+        .modal-eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+        .modal-body { padding: 36px 50px 44px 50px; }
+
         @keyframes modalIn {
-            from { opacity: 0; transform: translateY(24px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: translateY(24px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
         .modal-close {
             position: absolute;
             top: 20px;
             right: 20px;
-            font-size: 32px;
+            font-size: 26px;
             font-weight: 300;
-            color: var(--text-light);
-            background: var(--white);
+            color: rgba(255,255,255,0.7);
+            background: rgba(255,255,255,0.08);
             border: none;
             cursor: pointer;
             transition: all 0.3s;
-            width: 44px;
-            height: 44px;
+            width: 42px;
+            height: 42px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 8px;
+            border-radius: 10px;
             z-index: 5;
         }
-
         .modal-close:hover {
-            color: var(--black);
-            background: rgba(200, 168, 107, 0.12);
+            color: var(--white);
+            background: var(--gold);
             transform: rotate(90deg);
         }
 
         .modal h2 {
-            font-size: 42px;
+            font-size: 38px;
             font-weight: 700;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+            letter-spacing: -0.8px;
+            color: var(--white);
+            line-height: 1.1;
         }
-
-        .modal h2 em {
-            font-style: italic;
-            color: var(--gold);
-        }
+        .modal h2 em { font-style: italic; color: var(--gold); }
 
         .modal-subtitle {
-            font-size: 16px;
-            color: var(--text-light);
-            margin-bottom: 40px;
+            font-size: 15px;
+            color: rgba(255,255,255,0.72);
+            margin-bottom: 0;
             font-weight: 300;
+            line-height: 1.65;
         }
 
-        .contact-form {
-            max-width: 650px;
+        /* Trust row under header */
+        .modal-trust {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            padding: 18px 50px;
+            background: rgba(200, 168, 107, 0.08);
+            border-bottom: 1px solid rgba(20,20,20,0.06);
         }
+        .modal-trust span {
+            display: flex; align-items: center; gap: 7px;
+            font-size: 12px; font-weight: 500; color: var(--text);
+            letter-spacing: 0.2px;
+        }
+        .modal-trust svg { width: 15px; height: 15px; color: var(--gold); flex-shrink: 0; }
 
-        .form-group {
-            margin-bottom: 28px;
-        }
+        .contact-form { max-width: none; }
+
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+
+        .form-group { margin-bottom: 20px; }
 
         .form-group label {
             display: block;
-            font-size: 13px;
+            font-size: 11.5px;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: var(--black);
-            letter-spacing: 0.5px;
+            letter-spacing: 0.6px;
             text-transform: uppercase;
         }
 
@@ -2026,13 +2062,26 @@
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 16px 18px;
+            padding: 14px 16px;
             font-family: 'Poppins', sans-serif;
             font-size: 15px;
-            border: 1px solid #ddd;
-            background: var(--white);
+            border: 1.5px solid #e4e4e2;
+            border-radius: 10px;
+            background: #fafafa;
             color: var(--text);
-            font-weight: 300;
+            font-weight: 400;
+            transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder { color: #aaa; font-weight: 300; }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(200, 168, 107, 0.18);
         }
 
         .form-group select {
@@ -2041,33 +2090,54 @@
             -webkit-appearance: none;
             -moz-appearance: none;
             padding-right: 40px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23141414' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23C8A86B' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
-            background-position: right 18px center;
+            background-position: right 16px center;
         }
 
-        .form-group textarea {
-            resize: vertical;
-            min-height: 130px;
-        }
+        .form-group textarea { resize: vertical; min-height: 110px; }
 
         .form-group button {
+            position: relative;
+            overflow: hidden;
             background: var(--gold);
             color: var(--black);
-            padding: 16px 40px;
+            padding: 17px 40px;
             border: none;
+            border-radius: 10px;
             font-weight: 700;
-            font-size: 12px;
+            font-size: 12.5px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: transform 0.35s cubic-bezier(0.23,1,0.32,1), box-shadow 0.35s;
             width: 100%;
-            letter-spacing: 0.5px;
+            letter-spacing: 1.2px;
             text-transform: uppercase;
+            z-index: 0;
         }
-
+        .form-group button::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: var(--black);
+            transform: translateX(-101%);
+            transition: transform 0.4s cubic-bezier(0.23,1,0.32,1);
+            z-index: -1;
+        }
         .form-group button:hover {
-            background: #d4b896;
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(20,20,20,0.22);
         }
+        .form-group button:hover::before { transform: translateX(0); }
+        .form-group button:disabled { opacity: 0.7; cursor: wait; }
+
+        .form-reassure {
+            text-align: center;
+            font-size: 12.5px;
+            color: var(--text-light);
+            margin-top: 16px;
+            font-weight: 300;
+        }
+        .form-reassure strong { color: var(--black); font-weight: 600; }
 
         /* RESPONSIVE */
         @media (max-width: 1024px) {
@@ -2275,13 +2345,20 @@
             }
 
             .modal-content {
-                padding: 40px 22px;
-                border-radius: 12px;
+                padding: 0;
+                border-radius: 16px;
             }
 
+            .modal-header { padding: 34px 26px 28px 26px; }
+            .modal-header::after { left: 26px; }
+            .modal-body { padding: 28px 26px 34px 26px; }
+            .modal-trust { padding: 16px 26px; gap: 14px; }
+
             .modal h2 {
-                font-size: 30px;
+                font-size: 28px;
             }
+
+            .form-row { grid-template-columns: 1fr; gap: 0; }
 
             .modal-close {
                 top: 12px;
@@ -2788,67 +2865,80 @@
     <div id="quoteModal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeQuoteModal()">&times;</button>
-            <h2>Book a <em>quote.</em></h2>
-            <p class="modal-subtitle">Tell us what's happening. We'll book a time that suits you and come provide a fixed, transparent quote. No obligation, no pressure.</p>
-            
-            <form class="contact-form" id="quoteForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="handleSubmit(event)">
-                <div class="form-group">
-                    <label>Your Name *</label>
-                    <input type="text" name="name" required>
-                </div>
+            <div class="modal-header">
+                <div class="modal-eyebrow">Free · No Obligation</div>
+                <h2>Book your <em>quote.</em></h2>
+                <p class="modal-subtitle">Tell us what's happening with your roof. We'll book a time that suits and come out with a fixed, itemised quote — no pressure, no surprises.</p>
+            </div>
+            <div class="modal-trust">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-7 17l7 3 7-3a10 10 0 0 0-7-17z"/><path d="M9 12l2 2 4-4"/></svg>Licensed &amp; Insured</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Fast Response</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Itemised Quotes</span>
+            </div>
+            <div class="modal-body">
+                <form class="contact-form" id="quoteForm" action="https://formspree.io/f/xbdvyavy" method="POST" onsubmit="handleSubmit(event)">
+                    <input type="hidden" name="_subject" value="New Quote Request — SAL Roofing Website">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" name="name" placeholder="Full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone *</label>
+                            <input type="tel" name="phone" placeholder="04XX XXX XXX" required>
+                        </div>
+                    </div>
 
-                <div class="form-group">
-                    <label>Email Address *</label>
-                    <input type="email" name="email" required>
-                </div>
+                    <div class="form-group">
+                        <label>Email Address *</label>
+                        <input type="email" name="email" placeholder="you@email.com" required>
+                    </div>
 
-                <div class="form-group">
-                    <label>Phone Number *</label>
-                    <input type="tel" name="phone" required>
-                </div>
+                    <div class="form-group">
+                        <label>Property Address *</label>
+                        <input type="text" name="address" placeholder="Street, suburb" required>
+                    </div>
 
-                <div class="form-group">
-                    <label>Address *</label>
-                    <input type="text" name="address" required>
-                </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Enquiry Type *</label>
+                            <select name="enquiry_type" required>
+                                <option value="">Select…</option>
+                                <option value="general">General Enquiry</option>
+                                <option value="emergency">Emergency Repair</option>
+                                <option value="new-install">New Roof Install</option>
+                                <option value="quote">Quote Request</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Service Needed *</label>
+                            <select name="service" required>
+                                <option value="">Select…</option>
+                                <option value="repair">Roof Repair</option>
+                                <option value="replacement">Roof Replacement</option>
+                                <option value="guttering">Guttering</option>
+                                <option value="inspection">Inspection</option>
+                                <option value="metal">Metal Roofing</option>
+                                <option value="restoration">Restoration</option>
+                                <option value="emergency">Emergency Repair</option>
+                            </select>
+                        </div>
+                    </div>
 
-                <div class="form-group">
-                    <label>Enquiry Type *</label>
-                    <select name="enquiry_type" required>
-                        <option value="">-- Select Enquiry Type --</option>
-                        <option value="general">General Enquiry</option>
-                        <option value="emergency">Emergency Repair</option>
-                        <option value="new-install">New Roof Install</option>
-                        <option value="quote">Quote Request</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
+                    <div class="form-group">
+                        <label>Tell Us About the Job *</label>
+                        <textarea name="message" required placeholder="A quick description — what's going on with your roof?"></textarea>
+                    </div>
 
-                <div class="form-group">
-                    <label>Service Needed *</label>
-                    <select name="service" required>
-                        <option value="">-- Select Service --</option>
-                        <option value="repair">Roof Repair</option>
-                        <option value="replacement">Roof Replacement</option>
-                        <option value="guttering">Guttering</option>
-                        <option value="inspection">Inspection</option>
-                        <option value="metal">Metal Roofing</option>
-                        <option value="restoration">Restoration</option>
-                        <option value="emergency">Emergency Repair</option>
-                    </select>
-                </div>
+                    <div class="form-group" style="margin-bottom:0;">
+                        <button type="submit">Get My Free Quote</button>
+                    </div>
+                    <p class="form-reassure">We usually reply the <strong>same day</strong>. Or call <a href="tel:0432910369" style="color:var(--gold);font-weight:600;">0432 910 369</a>.</p>
 
-                <div class="form-group">
-                    <label>Tell Us About Your Roofing Issue *</label>
-                    <textarea name="message" required placeholder="Describe your roofing needs..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <button type="submit">ENQUIRE NOW</button>
-                </div>
-
-                <div id="formStatus" style="display: none; padding: 18px 20px; border-radius: 4px; font-size: 14px; font-weight: 500; text-align: center; margin-top: 8px;"></div>
-            </form>
+                    <div id="formStatus" style="display: none; padding: 18px 20px; border-radius: 10px; font-size: 14px; font-weight: 500; text-align: center; margin-top: 16px;"></div>
+                </form>
+            </div>
         </div>
     </div>
 

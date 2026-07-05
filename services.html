@@ -267,6 +267,28 @@
         .form-reassure { text-align:center; font-size:12.5px; color:var(--text-light); margin-top:16px; font-weight:300; }
         .form-reassure strong { color:var(--black); font-weight:600; }
         @media (max-width:600px){ .modal-header{padding:32px 26px 26px;} .modal-header::after{left:26px;} .modal-body{padding:28px 26px 34px;} .modal-trust{padding:16px 26px; gap:14px;} .modal h2{font-size:28px;} .form-row{grid-template-columns:1fr; gap:0;} .modal-close{top:12px; right:12px;} }
+
+        /* MOBILE OVERRIDES — cascade-last */
+        @media (max-width: 640px) {
+            html, body { overflow-x: hidden; max-width: 100%; }
+            img, video, svg { max-width: 100%; height: auto; }
+            .section { padding: 56px 20px !important; }
+            .page-hero { padding: 90px 20px 60px !important; }
+            .page-hero h1 { font-size: clamp(34px, 11vw, 44px) !important; }
+            .cta-strip { padding: 60px 20px !important; }
+            h2.head, .head { font-size: clamp(28px, 8vw, 42px) !important; line-height: 1.15 !important; }
+            .lead { font-size: 15px !important; line-height: 1.7 !important; }
+            .cta-strip h2 { font-size: clamp(30px, 9vw, 44px) !important; }
+        }
+        @media (max-width: 400px) {
+            .section { padding: 48px 16px !important; }
+            .page-hero { padding: 80px 16px 52px !important; }
+        }
+        @media (max-width: 640px) {
+            .svc-row { padding: 40px 0 !important; gap: 28px !important; }
+            .svc-visual { height: 260px !important; }
+            .svc-text h3 { font-size: clamp(24px, 7vw, 32px) !important; }
+        }
 </style>
 </head>
 <body class="loading">

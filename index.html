@@ -2371,7 +2371,10 @@
             .visual-break-image { border-radius: 0 !important; }
 
             /* ---- Clean full-screen mobile nav ---- */
-            header { z-index: 3000 !important; }
+            /* backdrop-filter on header creates a containing block that traps
+               position:fixed children — must disable it for the overlay to
+               cover the full viewport. */
+            header { z-index: 3000 !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: rgba(20,20,20,0.98) !important; }
             #mainNav {
                 position: fixed !important;
                 inset: 0 !important;
@@ -2407,8 +2410,7 @@
             .faq-question { padding: 22px 20px !important; min-height: 0 !important; font-size: 15px !important; }
             .faq-toggle { font-size: 24px !important; }
 
-            /* ---- Hero speed: skip video download on mobile, show poster ---- */
-            .hero video { display: none !important; }
+            /* ---- Hero video: keep playing on mobile, poster as fallback ---- */
             .hero-video-container {
                 background-image: url("https://raw.githubusercontent.com/lukemcgrath12-source/salroofing-website/main/sal-roofing-image-break-1.png");
                 background-size: cover;
@@ -3247,19 +3249,5 @@
         // Testimonial carousel
         // Auto-scrolling testimonials - no JS needed, handled by CSS animations
     </script>
-<script>
-(function(){
-  // On mobile, don't download the hero video — the CSS poster background covers it.
-  if (window.matchMedia && window.matchMedia('(max-width: 640px)').matches) {
-    var v = document.querySelector('.hero video');
-    if (v) {
-      try { v.pause(); } catch(e){}
-      v.removeAttribute('autoplay');
-      v.querySelectorAll('source').forEach(function(s){ s.remove(); });
-      v.load();
-    }
-  }
-})();
-</script>
 </body>
 </html>

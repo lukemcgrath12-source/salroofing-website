@@ -1851,43 +1851,27 @@
 
         .footer-socials a {
             display: inline-flex;
-            width: 48px;
-            height: 48px;
+            width: 46px;
+            height: 46px;
             align-items: center;
             justify-content: center;
-            background: var(--white);
-            border: 2px solid var(--gold);
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(200, 168, 107, 0.45);
             border-radius: 10px;
-            color: var(--black);
-            font-weight: 700;
-            font-size: 20px;
-            transition: all 0.35s cubic-bezier(0.23, 1, 0.320, 1);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
+            color: var(--gold);
+            transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
         }
+        .footer-socials a svg { position: relative; z-index: 1; }
 
         .footer-socials a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gold);
-            z-index: -1;
-            transition: left 0.35s cubic-bezier(0.23, 1, 0.320, 1);
+            content: none;
         }
 
         .footer-socials a:hover {
-            color: var(--white);
+            color: var(--black);
+            background: var(--gold);
             border-color: var(--gold);
-            box-shadow: 0 8px 20px rgba(200, 168, 107, 0.35);
             transform: translateY(-3px);
-        }
-
-        .footer-socials a:hover::before {
-            left: 0;
         }
 
         .footer-column ul {
@@ -2404,6 +2388,51 @@
 
             /* Visual break + group images sit flush */
             .visual-break-image { border-radius: 0 !important; }
+
+            /* ---- Clean full-screen mobile nav ---- */
+            header { z-index: 3000 !important; }
+            #mainNav {
+                position: fixed !important;
+                inset: 0 !important;
+                width: 100% !important;
+                margin: 0 !important;
+                background: #141414 !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                align-items: center !important;
+                gap: 4px !important;
+                display: none !important;
+                z-index: 2000 !important;
+                order: 0 !important;
+            }
+            #mainNav.open { display: flex !important; }
+            #mainNav a {
+                font-size: 22px !important;
+                font-weight: 600 !important;
+                letter-spacing: 1px !important;
+                padding: 18px 40px !important;
+                border: none !important;
+                width: auto !important;
+                color: #fff !important;
+                text-align: center !important;
+            }
+            #mainNav a:active { color: var(--gold) !important; }
+            .nav-toggle { position: relative; z-index: 3100 !important; }
+            header .logo { position: relative; z-index: 3100; }
+
+            /* ---- FAQ tighten ---- */
+            .faq-section-header { margin-bottom: 40px !important; }
+            .faq-list { gap: 14px !important; }
+            .faq-question { padding: 22px 20px !important; min-height: 0 !important; font-size: 15px !important; }
+            .faq-toggle { font-size: 24px !important; }
+
+            /* ---- Hero speed: skip video download on mobile, show poster ---- */
+            .hero video { display: none !important; }
+            .hero-video-container {
+                background-image: url("https://raw.githubusercontent.com/lukemcgrath12-source/salroofing-website/main/sal-roofing-image-break-1.png");
+                background-size: cover;
+                background-position: center;
+            }
         }
 
         @media (max-width: 400px) {
@@ -3237,5 +3266,19 @@
         // Testimonial carousel
         // Auto-scrolling testimonials - no JS needed, handled by CSS animations
     </script>
+<script>
+(function(){
+  // On mobile, don't download the hero video — the CSS poster background covers it.
+  if (window.matchMedia && window.matchMedia('(max-width: 640px)').matches) {
+    var v = document.querySelector('.hero video');
+    if (v) {
+      try { v.pause(); } catch(e){}
+      v.removeAttribute('autoplay');
+      v.querySelectorAll('source').forEach(function(s){ s.remove(); });
+      v.load();
+    }
+  }
+})();
+</script>
 </body>
 </html>

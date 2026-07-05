@@ -1105,75 +1105,94 @@
             animation: fadeInUp 0.8s ease-out 0.2s backwards;
         }
 
+        /* TEAM GRID */
         .team-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 28px;
         }
 
         .team-member {
-            padding: 40px;
+            flex: 0 0 300px;
+            width: 300px;
+            padding: 0;
             border: 1px solid rgba(200, 168, 107, 0.15);
-            border-radius: 12px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(242,242,240,0.5) 100%);
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--white);
+            transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.23, 1, 0.320, 1);
             box-shadow: 0 2px 8px rgba(20, 20, 20, 0.04);
         }
 
         .team-member:hover {
             border-color: rgba(200, 168, 107, 0.5);
             box-shadow: 0 20px 48px rgba(20, 20, 20, 0.16);
-            background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(200, 168, 107, 0.05) 100%);
-            transform: translateY(-4px);
+            transform: translateY(-6px);
         }
 
         .team-member-image {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
+            width: 100%;
+            aspect-ratio: 4 / 5;
             overflow: hidden;
-            margin-bottom: 24px;
-            border: 3px solid rgba(200, 168, 107, 0.3);
-            box-shadow: 0 4px 16px rgba(20, 20, 20, 0.08);
+            margin: 0;
+            background: #f0f0ee;
         }
 
         .team-member-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center 25%;
+            transition: transform 0.6s cubic-bezier(0.23,1,0.32,1);
         }
+        .team-member:hover .team-member-image img { transform: scale(1.05); }
+
+        .team-member-body { padding: 28px 28px 32px 28px; }
 
         .team-role {
             font-size: 11px;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
             color: var(--gold);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .team-member h4 {
-            font-size: 24px;
+            font-size: 23px;
             font-weight: 700;
             color: var(--black);
-            margin: 0 0 16px 0;
+            margin: 0 0 6px 0;
             letter-spacing: -0.5px;
         }
 
+        .team-name-rule {
+            width: 34px;
+            height: 2px;
+            background: var(--gold);
+            border-radius: 2px;
+            margin: 14px 0 16px 0;
+            transition: width 0.4s cubic-bezier(0.23,1,0.32,1);
+        }
+        .team-member:hover .team-name-rule { width: 60px; }
+
         .team-member p {
-            font-size: 15px;
-            color: rgba(20, 20, 20, 0.65);
-            line-height: 1.9;
+            font-size: 14.5px;
+            color: rgba(20, 20, 20, 0.7);
+            line-height: 1.8;
             margin: 0;
-            font-weight: 400;
-            letter-spacing: 0.3px;
+            font-weight: 300;
         }
 
-        @media (max-width: 1024px) {
-            .team-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
+        @media (max-width: 768px) {
+            .team-grid { gap: 18px; }
+            .team-member { flex-basis: 280px; width: 280px; }
+            .team-member-body { padding: 24px 22px 26px 22px; }
+            .team-member h4 { font-size: 20px; }
+        }
+        @media (max-width: 380px) {
+            .team-member { flex-basis: 100%; width: 100%; }
         }
 
         .trust-grid {
@@ -2393,7 +2412,8 @@
             <div class="service-card fade-in-up stagger-1">
                 <div class="service-card-image-wrapper">
                     <div class="service-card-number">01</div>
-                    <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Repairs &amp; restorations</span></div>
+                    <img src="sal-roofing-service-repairs.jpg" alt="SAL Roofing metal roof repair and restoration work in Sydney" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div class="img-ph" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Repairs &amp; restorations</span></div>
                 </div>
                 <div class="service-card-body">
                     <h3>Repairs &amp; Restorations</h3>
@@ -2405,7 +2425,8 @@
             <div class="service-card fade-in-up stagger-2">
                 <div class="service-card-image-wrapper">
                     <div class="service-card-number">02</div>
-                    <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Inspections</span></div>
+                    <img src="sal-roofing-service-inspections.jpg" alt="SAL Roofing carrying out a roof inspection and report in Sydney" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div class="img-ph" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Inspections</span></div>
                 </div>
                 <div class="service-card-body">
                     <h3>Inspections &amp; Reports</h3>
@@ -2417,7 +2438,8 @@
             <div class="service-card fade-in-up stagger-3">
                 <div class="service-card-image-wrapper">
                     <div class="service-card-number">03</div>
-                    <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Replacements &amp; reroofing</span></div>
+                    <img src="sal-roofing-service-replacements.jpg" alt="SAL Roofing Colorbond roof replacement and reroofing in Sydney" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div class="img-ph" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Replacements &amp; reroofing</span></div>
                 </div>
                 <div class="service-card-body">
                     <h3>Replacements &amp; Reroofing</h3>
@@ -2429,7 +2451,8 @@
             <div class="service-card fade-in-up stagger-4">
                 <div class="service-card-image-wrapper">
                     <div class="service-card-number">04</div>
-                    <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Guttering &amp; roof plumbing</span></div>
+                    <img src="sal-roofing-service-guttering.jpg" alt="SAL Roofing guttering, downpipe and roof plumbing work in Sydney" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div class="img-ph" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Guttering &amp; roof plumbing</span></div>
                 </div>
                 <div class="service-card-body">
                     <h3>Guttering &amp; Roof Plumbing</h3>
@@ -2474,29 +2497,76 @@
     <!-- WHY SAL -->
     <section class="why-section" id="why">
         <div style="margin-bottom: 60px;">
-            <div style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px;">WHY PICK SAM</div>
-            <h2>Built on <em style="font-style: italic; color: var(--gold);">reputation.</em></h2>
-            <p style="font-size: 16px; font-weight: 300; line-height: 1.8; color: var(--text-light); max-width: 700px; margin-top: 0;">You're not hiring a corporate roofing empire. You're hiring Sam — one guy who built this reputation project by project, and will be on your roof personally.</p>
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px;">MEET THE CREW</div>
+            <h2>The team behind <em style="font-style: italic; color: var(--gold);">the work.</em></h2>
+            <p style="font-size: 16px; font-weight: 300; line-height: 1.8; color: var(--text-light); max-width: 700px; margin-top: 0;">You're not hiring a faceless corporate outfit. You're hiring Sam and a tight, reliable crew who turn up, do it right, and stand behind every job.</p>
         </div>
 
         <div class="team-image-section">
             <div class="team-content" style="width: 100%;">
                 <div class="team-grid">
-                    <div class="team-member fade-in-left stagger-1">
-                        <div class="team-member-image">
-                            <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                    <div class="team-member fade-in-up">
+                        <div class="team-member-image"><img src="sal-roofing-team-6.jpg" alt="Sam Longmuir, owner of SAL Roofing" loading="lazy"></div>
+                        <div class="team-member-body">
+                            <div class="team-role">Owner &amp; Operator</div>
+                            <h4>Sam Longmuir</h4>
+                            <div class="team-name-rule"></div>
+                            <p>Founder of SAL Roofing and a fully licensed roofer who's on the tools every day. Sam runs every job personally, from first quote to final inspection — no subcontractors, no shortcuts, no surprises.</p>
                         </div>
-                        <div class="team-role">Owner & Operator</div>
-                        <h4>Sam Longmuir</h4>
-                        <p>Experienced metal roofer. Licensed, insured, hands-on. You'll see Sam on your roof personally. No shortcuts, no subcontractors — just quality work backed by his name.</p>
                     </div>
-                    <div class="team-member fade-in-right stagger-2">
-                        <div class="team-member-image">
-                            <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                    <div class="team-member fade-in-up">
+                        <div class="team-member-image"><img src="sal-roofing-team-1.jpg" alt="Keepa Kakahi, SAL Roofing apprentice" loading="lazy"></div>
+                        <div class="team-member-body">
+                            <div class="team-role">Apprentice</div>
+                            <h4>Keppy Kakahi</h4>
+                            <div class="team-name-rule"></div>
+                            <p>A dedicated apprentice learning the craft from the ground up across metal, Colorbond and repairs. Sharp, reliable, and committed to doing it right the first time.</p>
                         </div>
-                        <div class="team-role">Crew Lead</div>
-                        <h4>Professional Team</h4>
-                        <p>A trained, experienced crew that's personally accountable. Each team member knows the standard: work right the first time, leave the site clean.</p>
+                    </div>
+                    <div class="team-member fade-in-up">
+                        <div class="team-member-image"><img src="sal-roofing-team-2.jpg" alt="Tristan Schaeffel, SAL Roofing tradesman" loading="lazy"></div>
+                        <div class="team-member-body">
+                            <div class="team-role">Tradesman</div>
+                            <h4>TJ Schaeffel</h4>
+                            <div class="team-name-rule"></div>
+                            <p>A qualified roofer known for precision and a steady set of hands. TJ brings the technical skill that keeps every SAL job to a genuinely professional standard.</p>
+                        </div>
+                    </div>
+                    <div class="team-member fade-in-up">
+                        <div class="team-member-image"><img src="sal-roofing-team-5.jpg" alt="Levi Jarvis, SAL Roofing" loading="lazy"></div>
+                        <div class="team-member-body">
+                            <div class="team-role">Mature Apprentice</div>
+                            <h4>Levi Jarvis</h4>
+                            <div class="team-name-rule"></div>
+                            <p>Came to the trade with real-world experience and a serious work ethic. Levi's maturity and reliability make him a trusted presence on every site.</p>
+                        </div>
+                    </div>
+                    <div class="team-member fade-in-up">
+                        <div class="team-member-image"><img src="sal-roofing-team-3.jpg" alt="Riley Tonkin, SAL Roofing apprentice" loading="lazy"></div>
+                        <div class="team-member-body">
+                            <div class="team-role">Apprentice</div>
+                            <h4>Riley Tonkin</h4>
+                            <div class="team-name-rule"></div>
+                            <p>An apprentice putting in the hard yards and learning fast. Riley brings energy and a sharp eye for detail to every roof he works on.</p>
+                        </div>
+                    </div>
+                    <div class="team-member fade-in-up">
+                        <div class="team-member-image"><img src="sal-roofing-team-4.jpg" alt="Ben Hilder, SAL Roofing apprentice" loading="lazy"></div>
+                        <div class="team-member-body">
+                            <div class="team-role">Apprentice</div>
+                            <h4>Ben Hilder</h4>
+                            <div class="team-name-rule"></div>
+                            <p>Learning every side of the trade, from small repairs through to full reroofs. Ben's dedication shows in the quality of the finished result.</p>
+                        </div>
+                    </div>
+                    <div class="team-member fade-in-up">
+                        <div class="team-member-image"><img src="sal-roofing-team-7.jpg" alt="Oscar Parkinson, SAL Roofing carpenter" loading="lazy"></div>
+                        <div class="team-member-body">
+                            <div class="team-role">Carpenter</div>
+                            <h4>Oscar Parkinson</h4>
+                            <div class="team-name-rule"></div>
+                            <p>The team's qualified carpenter, handling the structural and timber work behind a proper roof. Oscar makes sure every job is sound from frame to finish.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2856,7 +2926,7 @@
             setTimeout(() => { if (entry) entry.style.display = 'none'; }, 2800);
 
             // Stagger page load animations
-            const elements = document.querySelectorAll('h1, h2, h3, p, .service-card, .testimonial-card, .faq-item, .team-member');
+            const elements = document.querySelectorAll('h1, h2, h3, p, .service-card, .testimonial-card, .faq-item');
             elements.forEach((el, index) => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(20px)';

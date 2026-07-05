@@ -111,7 +111,27 @@
         .svc-text ul { list-style: none; padding: 0; }
         .svc-text li { font-size: 14px; padding: 6px 0 6px 26px; position: relative; color: var(--text); }
         .svc-text li::before { content:''; position:absolute; left:0; top:14px; width:12px; height:2px; background:var(--gold); }
-        .svc-visual { height: 320px; border-radius: 8px; overflow: hidden; }
+        .svc-visual {
+            height: 400px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 18px 44px rgba(20,20,20,0.14);
+            border: 1px solid rgba(20,20,20,0.06);
+            position: relative;
+        }
+        .svc-visual img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: center 28%;
+            transition: transform 0.7s cubic-bezier(0.23,1,0.32,1);
+        }
+        .svc-visual:hover img { transform: scale(1.045); }
+
+        /* SCROLL REVEAL */
+        .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.7s cubic-bezier(0.23,1,0.32,1), transform 0.7s cubic-bezier(0.23,1,0.32,1); }
+        .reveal.in { opacity: 1; transform: translateY(0); }
+        .svc-row.flip .svc-visual.reveal { transform: translateY(36px); }
+        @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 
         /* IMAGE PLACEHOLDER */
         .img-ph {
@@ -259,7 +279,7 @@
 
     <section class="section">
         <div class="svc-row" id="colorbond">
-            <div class="svc-text">
+            <div class="svc-text reveal">
                 <h3>Colorbond &amp; Metal Roofing</h3>
                 <p>BlueScope-backed Colorbond installation rated for coastal Sydney conditions. Whether it's a new build or a full re-roof, we install to spec with a 40+ year lifespan and full warranty registration.</p>
                 <ul>
@@ -268,11 +288,11 @@
                     <li>BlueScope warranty registration</li>
                 </ul>
             </div>
-            <div class="svc-visual"><img src="sal-roofing-service-colorbond.jpg" alt="SAL Roofing Colorbond metal roof installation in Sydney" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="img-ph" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Colorbond install photo</span></div></div>
+            <div class="svc-visual reveal"><img src="sal-roofing-service-colorbond.jpg" alt="SAL Roofing Colorbond metal roof installation in Sydney" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="img-ph" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Colorbond install photo</span></div></div>
         </div>
 
         <div class="svc-row flip" id="repairs">
-            <div class="svc-text">
+            <div class="svc-text reveal">
                 <h3>Roof Repairs &amp; Leak Detection</h3>
                 <p>We trace the source, not just patch the symptom. Cracked tiles, failed flashing, rusted sheets, leaks that have baffled other roofers — we find it and fix it properly, backed by a 5-year workmanship guarantee.</p>
                 <ul>
@@ -281,11 +301,11 @@
                     <li>5-year workmanship guarantee</li>
                 </ul>
             </div>
-            <div class="svc-visual"><img src="sal-roofing-service-repairs.jpg" alt="SAL Roofing leak repair and restoration work in Sydney" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="img-ph" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Leak repair photo</span></div></div>
+            <div class="svc-visual reveal"><img src="sal-roofing-service-repairs.jpg" alt="SAL Roofing leak repair and restoration work in Sydney" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="img-ph" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Leak repair photo</span></div></div>
         </div>
 
         <div class="svc-row" id="replacement">
-            <div class="svc-text">
+            <div class="svc-text reveal">
                 <h3>Roof Replacement</h3>
                 <p>When repairs no longer stack up, we handle the full replacement — tear-off, disposal, new install and clean-up. Straight pricing, no surprises, and we leave the site spotless.</p>
                 <ul>
@@ -294,11 +314,11 @@
                     <li>Fixed, transparent quotes</li>
                 </ul>
             </div>
-            <div class="svc-visual"><img src="sal-roofing-service-replacements.jpg" alt="SAL Roofing Colorbond roof replacement in Sydney" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="img-ph" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Replacement photo</span></div></div>
+            <div class="svc-visual reveal"><img src="sal-roofing-service-replacements.jpg" alt="SAL Roofing Colorbond roof replacement in Sydney" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="img-ph" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Replacement photo</span></div></div>
         </div>
 
         <div class="svc-row flip" id="guttering">
-            <div class="svc-text">
+            <div class="svc-text reveal">
                 <h3>Guttering &amp; Downpipes</h3>
                 <p>New gutters, replacements, and downpipe work that actually moves water where it should. Done neat, done once. We'll also sort gutter guard if you're sick of clearing leaves.</p>
                 <ul>
@@ -307,11 +327,11 @@
                     <li>Gutter guard installation</li>
                 </ul>
             </div>
-            <div class="svc-visual"><img src="sal-roofing-service-guttering.jpg" alt="SAL Roofing guttering and roof plumbing in Sydney" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="img-ph" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Guttering photo</span></div></div>
+            <div class="svc-visual reveal"><img src="sal-roofing-service-guttering.jpg" alt="SAL Roofing guttering and roof plumbing in Sydney" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="img-ph" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Guttering photo</span></div></div>
         </div>
 
         <div class="svc-row" id="restoration">
-            <div class="svc-text">
+            <div class="svc-text reveal">
                 <h3>Roof Restoration</h3>
                 <p>Bring a tired roof back to life — clean, repair, re-bed, re-point and re-coat. A fraction of the cost of replacement when the bones are still good.</p>
                 <ul>
@@ -320,11 +340,11 @@
                     <li>Protective re-coating</li>
                 </ul>
             </div>
-            <div class="svc-visual"><img src="sal-roofing-service-restoration.jpg" alt="SAL Roofing roof restoration and recoating in Sydney" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="img-ph" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Restoration photo</span></div></div>
+            <div class="svc-visual reveal"><img src="sal-roofing-service-restoration.jpg" alt="SAL Roofing roof restoration and recoating in Sydney" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="img-ph" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Restoration photo</span></div></div>
         </div>
 
         <div class="svc-row flip" id="inspections">
-            <div class="svc-text">
+            <div class="svc-text reveal">
                 <h3>Roof Inspections &amp; Reports</h3>
                 <p>Buying, selling, or just want peace of mind? We'll give your roof an honest once-over and a written report — what's good, what needs doing, and what it'll cost. No scare tactics.</p>
                 <ul>
@@ -333,7 +353,7 @@
                     <li>Insurance documentation</li>
                 </ul>
             </div>
-            <div class="svc-visual"><img src="sal-roofing-service-inspections.jpg" alt="SAL Roofing roof inspection in Sydney" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="img-ph" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Inspection photo</span></div></div>
+            <div class="svc-visual reveal"><img src="sal-roofing-service-inspections.jpg" alt="SAL Roofing roof inspection in Sydney" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="img-ph" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Inspection photo</span></div></div>
         </div>
     </section>
 
@@ -436,5 +456,15 @@
             finally { btn.textContent=t; btn.disabled=false; }
         }
     </script>
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+  },{threshold:0.15, rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e);});
+})();
+</script>
 </body>
 </html>

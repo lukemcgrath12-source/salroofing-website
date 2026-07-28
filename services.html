@@ -331,8 +331,14 @@ h2.big em{font-style:italic;font-weight:600;color:var(--gold)}
 .sblock{display:grid;gap:22px;padding:38px 0;border-top:1px solid var(--line)}
 .sblock:last-child{border-bottom:1px solid var(--line)}
 @media(min-width:900px){
-  .sblock{grid-template-columns:58px 1fr 1fr;gap:34px;align-items:start;padding:46px 0}
-  .sblock.flip .sb-media{order:-1}
+  .sblock{grid-template-columns:58px 1fr 1fr;gap:34px;align-items:center;padding:46px 0}
+  .sblock .sb-n{grid-column:1;grid-row:1;align-self:start}
+  .sblock .sb-body{grid-column:2;grid-row:1}
+  .sblock .sb-media{grid-column:3;grid-row:1}
+  .sblock.flip .sb-body{grid-column:3}
+  .sblock.flip .sb-media{grid-column:2}
+  .sblock.noimg .sb-body{grid-column:2/-1;max-width:none}
+  .sblock.noimg .sb-body p{max-width:62ch}
 }
 .sb-n{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--gold)}
 .sb-body h3{font-size:26px;font-weight:600;letter-spacing:-.025em;line-height:1.15;margin-bottom:12px}
@@ -341,7 +347,7 @@ h2.big em{font-style:italic;font-weight:600;color:var(--gold)}
 .sb-list{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:9px}
 .sb-list li{font-size:13.5px;color:var(--text-mid);font-weight:300;padding-left:20px;position:relative;line-height:1.55}
 .sb-list li::before{content:'';position:absolute;left:0;top:9px;width:9px;height:1px;background:var(--gold)}
-.sb-media{border-radius:8px;overflow:hidden;background:var(--cream-2);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
+.sb-media{border-radius:8px;overflow:hidden;background:var(--cream-2);aspect-ratio:4/3;max-height:340px;width:100%;display:flex;align-items:center;justify-content:center}
 .sb-media img{width:100%;height:100%;object-fit:cover}
 .sb-ph{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-faint);text-align:center;padding:20px}
 
@@ -527,14 +533,13 @@ h2.big em{font-style:italic;font-weight:600;color:var(--gold)}
         </div>
         <div class="sb-media"><img src="sal-roofing-service-guttering.jpg" alt="Guttering and downpipe installation in Sydney" loading="lazy"></div>
       </article>
-      <article class="sblock rv">
+      <article class="sblock noimg rv">
         <span class="sb-n">05</span>
         <div class="sb-body">
           <h3>Roof restoration</h3>
           <p>Bring a tired roof back to life &mdash; clean, repair, re-bed, re-point and re-coat. A fraction of the cost of replacement when the bones are still good.</p>
           <ul class="sb-list"><li>High-pressure clean</li><li>Re-bedding &amp; re-pointing</li><li>Protective re-coating</li></ul>
         </div>
-        <div class="sb-media"><span class="sb-ph">Photo coming soon</span></div>
       </article>
       <article class="sblock flip rv">
         <span class="sb-n">06</span>

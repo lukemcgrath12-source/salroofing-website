@@ -3225,6 +3225,12 @@
                 });
 
                 if (response.ok) {
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'generate_lead', {
+                            'form_name': 'quote_request',
+                            'form_destination': form.action
+                        });
+                    }
                     form.reset();
                     status.style.display = 'block';
                     status.style.background = 'rgba(200, 168, 107, 0.15)';

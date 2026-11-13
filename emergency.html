@@ -714,5 +714,17 @@ async function handleSubmit(event) {
 </script>
   <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
   <script defer src="/_vercel/insights/script.js"></script>
+<!-- lm-track -->
+<script>
+(function(){
+  function ev(n,p){try{if(typeof window.gtag==='function')window.gtag('event',n,p||{});}catch(e){}}
+  document.addEventListener('click',function(e){
+    var a=e.target&&e.target.closest?e.target.closest('a[href^="tel:"],a[href^="mailto:"]'):null; if(!a)return;
+    var h=a.getAttribute('href')||'';
+    if(h.indexOf('tel:')===0)ev('phone_call',{phone:h.slice(4).replace(/\s/g,''),page_path:location.pathname});
+    else ev('email_click',{page_path:location.pathname});
+  },true);
+})();
+</script>
 </body>
 </html>
